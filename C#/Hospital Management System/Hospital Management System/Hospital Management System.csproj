@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1294FE8-2395-419F-8191-16D5ADE4C1A6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Hospital_Management_System</RootNamespace>
+    <AssemblyName>Hospital Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dao\interfaces\IAppointmentRepository.cs" />
+    <Compile Include="dao\interfaces\IDoctorRepository.cs" />
+    <Compile Include="dao\interfaces\IHospitalService.cs" />
+    <Compile Include="dao\interfaces\IHospitalServiceImpl.cs" />
+    <Compile Include="dao\interfaces\IPatientRepository.cs" />
+    <Compile Include="dao\repositories\AppointmentRepository.cs" />
+    <Compile Include="dao\repositories\DoctorRepository.cs" />
+    <Compile Include="dao\repositories\PatientRepository.cs" />
+    <Compile Include="dao\services\HospitalService.cs" />
+    <Compile Include="dao\services\HospitalServiceImpl.cs" />
+    <Compile Include="entity\Appointment.cs" />
+    <Compile Include="entity\Doctor.cs" />
+    <Compile Include="entity\Patient.cs" />
+    <Compile Include="mainmod\MainModule.cs" />
+    <Compile Include="myexceptions\AppointmentNotFoundException.cs" />
+    <Compile Include="myexceptions\DoctorNotFoundException.cs" />
+    <Compile Include="myexceptions\PatientNumberNotFoundException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util\DatabaseInitializer.cs" />
+    <Compile Include="util\DBConnection.cs" />
+    <Compile Include="util\PropertyUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
